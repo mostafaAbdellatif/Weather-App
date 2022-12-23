@@ -40,5 +40,5 @@ function getCode(request,response){
 app.post('/add',addData);
 function addData(request,response){
     //create or modify the specified entry of zip code entered with the data.
-    project_data[request.userResponse.code]={'feeling':request.userResponse.feeling,'date':request.date,'temp':request.temp};
+    project_data = {'zip': request.userResponse.code,'feeling':request.userResponse.feeling,'date':request.date,'temp':request.temp};
 }
