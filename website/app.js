@@ -2,10 +2,10 @@
 
 // Personal API Key for OpenWeatherMap API
 let baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&APPID=e112f04b374270a8b948f65603e3dbef';
+const apiKey = '';
 
 let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click',generateData);
 /* Function called by event listener */
@@ -70,8 +70,8 @@ const updateUI = async()=>{
     try{
         const ProjectData = await req.json();
         console.log(ProjectData);
-        document.getElementById('date').innerHTML = "date: "+ProjectData.date;
-        document.getElementById('temp').innerHTML = "temp: "+ProjectData.temp;
+        document.getElementById('date').innerHTML = "Date: "+ProjectData.date;
+        document.getElementById('temp').innerHTML = "Temp: "+ProjectData.temp +" F";
         document.getElementById('content').innerHTML = "Your feeling is: "+ProjectData.feeling;
     }
     catch(error){
